@@ -6,7 +6,6 @@ export default {
     passwordField: '//input[@name="password"]',
     aboutField: '//textarea[@name="about"]',
     englishLevelField: '//label[@for="englishLevel"]/../../select ',
-    nameField: '//input[@name="name"]'
-
-
+    nameField: '//input[@name="name"]',
+    goalsField: '//textarea[@name="goals"]'
 }

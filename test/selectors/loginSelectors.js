@@ -1,6 +1,7 @@
 export default {
     h1: '//h1',
-    borderColor: '//input[@name-]"email"]'
+    borderColor: '//input[@name-]"email"]',
+    loginButton: '//button[@type="submit"]'
 
 
 

@@ -1,19 +1,13 @@
+import sel from './../selectors/loginSelectors'
+import data from './../data/loginData'
+
+
 class loginHelpers {
 
     login() {
-
-        browser.url('./user/login');
-        const emailField = $('//input[@name="email"]');
-        const passwordField = $('//input[@name="password"]');
-        const loginButton = $('//button[@type="submit"]');
-
-        const EMAIL = 'admin@test.com';
-        const PASSWORD = '11111';
-
-        emailField.setValue(EMAIL);
-        passwordField.setValue(PASSWORD);
-
-        loginButton.click();
+        $(sel.emailField).setValue(data.user.admin.email);
+        $(sel.passwordField).setValue(data.user.admin.password);
+        $(sel.loginButton).click();
         browser.pause(1000);
     };
 }
