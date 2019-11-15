@@ -6,5 +6,6 @@ export default {
     name: "Test Test",
     phone: "+12312312334",
     about: "About Test User About Test User About Test User About Test User",
-    goals: "goals goals goals goals"
+    goals: "goals goals goals goals",
+    englishLevel: "native"
 }

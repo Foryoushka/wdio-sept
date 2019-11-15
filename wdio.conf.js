@@ -1,3 +1,7 @@
+//const before = require('./hooks/before');
+const afterTest = require('./hooks/afterTest');
+const video = require('wdio-video-reporter');
+
 exports.config = {
     //
     // ====================
@@ -122,7 +126,23 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter.html
-    reporters: ['dot','spec',],
+    reporters: ['dot',
+        'spec',
+        [
+            video,
+            {
+                saveAllVideos: false, // If true, also saves videos for successful test cases
+                videoSlowdownMultiplier: 20, // Higher to get slower videos, lower for faster videos [Value 1-100]
+            },
+        ],
+        ['allure',
+            {
+            outputDir: 'reports/allure/raw',
+            disableWebdriverStepsReporting: true,
+            disableWebdriverScreenshotReporting: false,
+            },
+        ]
+    ],
 
     //
     // Options to be passed to Mocha.
@@ -135,7 +155,7 @@ exports.config = {
 
     suites: {
         login: ["./test/specs/login.js"]
-    }
+    },
     //
     // =====
     // Hooks
@@ -185,6 +205,7 @@ exports.config = {
      * Function to be executed before a test (in Mocha/Jasmine) or a step (in Cucumber) starts.
      * @param {Object} test test details
      */
+   // before: before,
     // beforeTest: function (test) {
     // },
     /**
@@ -203,6 +224,7 @@ exports.config = {
      * Function to be executed after a test (in Mocha/Jasmine) or a step (in Cucumber) starts.
      * @param {Object} test test details
      */
+    afterTest: afterTest,
     // afterTest: function(test) {
     // },
 

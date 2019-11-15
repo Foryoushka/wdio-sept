@@ -16,8 +16,9 @@ export default {
             name: 'Ruslan Admin'
         },
         student: {
-            email: '',
-            password: ''
+            email: 'student_viktor@test.com',
+            password: '11111',
+            name: 'Test Student'
 
         }
     }

@@ -1,6 +1,9 @@
-import { expect } from 'chai' ;
+import { expect } from 'chai'
 import data from './../../../../data/registerData'
 import sel from './../../../../selectors/registerSelectors'
+import axios from 'axios';
+import server from './../../../../data/apiData'
+import loginData from './../../../../data/loginData'
 
 describe("user register form functionality --- fields are displayed", ()=> {
     before(()=> {
@@ -50,9 +53,35 @@ describe("user register form functionality --- fields are displayed", ()=> {
         expect($(sel.goalsField).isDisplayed()).true;
     });
 
-});
 
-describe('User Register form functionality -- Register new user', ()=> {
+
+// describe('User Register form functionality -- Register new user', ()=> {
+//
+//     before(() => {
+//         return axios.post(`${server.serverUrl}/user/login`, {
+//             email: loginData.user.admin.email,
+//             password: loginData.user.admin.password
+//         }).then(response => {
+//             console.log (response.data.token);
+//
+//             return axios.post({
+//                 method: 'post',
+//                 data: {
+//
+//                 },
+//                 headers: {
+//                     'Authorization': response.data.token
+//                 }
+//             }).then().catch()
+//         }).catch(err => {
+//             console.log(err);
+//         });
+//     });
+
+    it('should validate `Submit button` is disabled', function () {
+        const buttonisEnabled = $(sel.submitButton).isEnabled();
+        expect(buttonisEnabled).false;
+    });
 
     it('should fill in `Real name` field', function () {
         $(sel.cellPhoneNumberField).setValue(data.name);
@@ -63,11 +92,34 @@ describe('User Register form functionality -- Register new user', ()=> {
     });
 
     it('should fill in `Password` field', function () {
-        $(sel.passwordField).setValue(data.password)
+        $(sel.passwordField).setValue(data.password);
     });
 
     it('should fill in `Cell phone number` field', function () {
-        $(sel.cellPhoneNumberField).setValue(data.phone)
+        $(sel.cellPhoneNumberField).setValue(data.phone);
     });
 
+    it('should fill in `About` field', function () {
+        $(sel.aboutField).setValue(data.about);
+    });
+
+    it('should fill in `Goals` field', function () {
+        $(sel.goalsField).setValue(data.goals);
+    });
+
+    it('should fill in `English level` field', function () {
+        $(sel.englishLevelField).selectByVisibleText(data.englishLevel);
+    });
+
+    it('should validate `Submit button` is enabled', function () {
+        const buttonisEnabled = $(sel.submitButton).isEnabled();
+        expect(buttonisEnabled).true;
+    });
+
+    // it('should click `Submit button`', function () {
+    //
+    // });
+
 });
+
+

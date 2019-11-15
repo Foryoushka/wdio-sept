@@ -1,3 +1,0 @@
-export default {
-   serverUrl: 'https://pasv-stage-server.herokuapp.com'
-}
