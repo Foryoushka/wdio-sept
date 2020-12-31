@@ -303,7 +303,7 @@
     "type-fest": "^0.3.1",
     "universalify": "^0.1.2",
     "uri-js": "^4.2.2",
-    "urijs": "^1.19.1",
+    "urijs": "^1.19.4",
     "util-deprecate": "^1.0.2",
     "uuid": "^3.3.3",
     "validate-npm-package-license": "^3.0.4",
