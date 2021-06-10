@@ -130,7 +130,7 @@
     "get-stream": "^4.1.0",
     "getpass": "^0.1.7",
     "glob": "^7.1.4",
-    "glob-parent": "^5.0.0",
+    "glob-parent": "^5.1.2",
     "globule": "^1.2.1",
     "graceful-fs": "^4.2.2",
     "grapheme-splitter": "^1.0.4",
